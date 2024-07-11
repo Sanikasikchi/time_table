@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registration</title>
+        <link rel="stylesheet" href="trial.css">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <div class="logo_Wrp">
+                    <a href="javascript:void(0);"><img src="logo.png" alt="logo"></a>
+                </div>
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);">
+                        <span class="nav-item">T-DashBoard</span>
+                   
+                    </a></li>
+                    <li><a href="">
+                        <i class="fas fa-home"></i>
+                        <a href="teacher.html">Home</a>
+                    </a></li>
+                    <li><a href="">
+                        <i class="fas fa-user">
+                            <a href="manage_profile.html">Manage Profile</a>
+                        </i>
+                    </a></li>
+                    <li><a href="">
+                        <i class="fas fa-user">
+                            <a href="manage_classes.html">Manage Your Classes</a>
+                        </i>
+                    </a></li>
+                    <li><a href="">
+                        <i class="faas fa-tasks"></i>
+                        <a href="contact_admin.html">Contact Admin</a>
+                    </a></li>
+                    <li><a href="">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a href="">Logout></a>
+                    </a></li>
+                </ul>
+            </nav>
+            <section class="main">
+                <div class="main-top">
+                    <h1>Classes History</h1>
+                    <i class="fas fa-user-cog"></i>
+                </div>
+                <div class="main-skills">
+                    <div class="card">
+                        <i class="fas.fa-app-store-IOS"></i>
+                        <h3>Classes Conducted</h3>
+                        <p>Check the classes ypu conducted:</p>
+                        <div class="charts">
+                            <div class="charts-card">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="card">
+                        <i class="fas.fa-laptop-code"></i>
+                        <h3>Cancalled Classes</h3>
+                        <p>Check classes you cancelled this week:</p><br>
+                        <table>
+                            <tr>
+                              <th>Date</th>
+                              <th>Class</th>
+                              <th>Subject</th>
+                              <th>Time</th>
+                            </tr>
+                            <tr>
+                              <td>2nd Jan</td>
+                              <td>BSC CA B</td>
+                              <td>Machine Learning</td>
+                              <td>2:00 pm</td>
+                            </tr>
+                            <tr>
+                                <td>6th Jan</td>
+                              <td>BSC CS A</td>
+                              <td>Advance Java</td>
+                              <td>10:00 am</td>
+                            </tr>
+                            <tr>
+                                <td>3rd Jan</td>
+                              <td>BSC IT</td>
+                              <td>Network Security</td>
+                              <td>8:00 am</td>
+                            </tr>
+                          </table>             
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+        <script src="class_cond_hist.js"></script>
+    </body>
+</html>

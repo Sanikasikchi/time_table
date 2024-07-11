@@ -1,0 +1,71 @@
+<!-- include header here -->
+{% include 'includesf/header.html' %}
+
+<!-- This tempalte tag loads the static file handling functionality in Django -->
+{% load static %}
+
+<body>
+  <div class="container">
+    <!-- Include siderbar navigation here -->
+    {% include 'includesf/sidebar-navigation.html' %}
+    <section class="main">
+      <div class="main-top">
+        <h1>Classes History</h1>
+        <i class="fas fa-user-cog"></i>
+      </div>
+      <div class="main-skills">
+        <div class="card">
+          <i class="fas.fa-laptop-code"></i>
+          <h3>Conducted/Scheduled Classes</h3>
+          <p>Check classes you conducted or claases scheduled for you this week:</p><br />
+          <table>
+            <tbody>
+                <tr>
+                    <th>#</th>
+                    <th>Class</th>
+                    <th>Period</th>
+                    <th>Day</th>
+                    <th>Subject</th>
+                  </tr>
+                {% for item in classes %}
+                <tr>
+                    <td>{{ forloop.counter }})</td>
+                    <td>{{item.schedule_classes.classes}} {{item.schedule_classes.classes.section}}</td>
+                    <td>{{item.schedule_classes.period}}</td>
+                    <td>{{item.schedule_classes.day}}</td>
+                    <td>{{item.schedule_classes.subject}}</td>
+                  </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <i class="fas.fa-laptop-code"></i>
+          <h3>Cancelled Classes</h3>
+          <p>Check classes you cancelled this week:</p><br />
+          <table>
+            <tbody>
+                <tr>
+                    <th>#</th>
+                    <th>Class</th>
+                    <th>Period</th>
+                    <th>Day</th>
+                    <th>Subject</th>
+                  </tr>
+                {% for item in classes_n %}
+                <tr>
+                    <td>{{ forloop.counter }})</td>
+                    <td>{{item.schedule_classes.classes}} {{item.schedule_classes.classes.section}}</td>
+                    <td>{{item.schedule_classes.period}}</td>
+                    <td>{{item.schedule_classes.day}}</td>
+                    <td>{{item.schedule_classes.subject}}</td>
+                  </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>

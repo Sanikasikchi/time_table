@@ -1,0 +1,8 @@
+DjangoDevelopment/__pycache__/*.pyc
+myapp/__pycache__/*.pyc
+*.py[cod]
+*.pyc
+general.log
+.env
+.vscode/launch.json
+DjangoDevelopment/__init__.py

@@ -1,0 +1,18 @@
+/*14 nov*/
+.success-block{color: #65ef65!important;}
+.error-block{ color: #d85e49!important; margin-left: 28%;display: inline-block;font-weight: normal;}
+.error-block strong{font-weight: normal;font-size: 14px;}
+.success-msg{color: green!important;font-weight: normal;}
+.error-msg{color:red!important;font-weight: normal;}
+@media screen and (max-width: 560px) {.error-block{margin-left:0px; }}
+.addToCartMessage{font-weight: 500;font-size: 18px;color: #fff; margin-bottom: 5px;}
+.cartMessage{color: #003471!important;font-weight: 600!important;}
+.messagebox{color: #26b126!important;}
+/*tooltip style 13 dec*/
+.tooltip {position: relative;  display: inline-block;/*border-bottom: 1px dotted black;*/}
+/*.tooltip .tooltiptext {visibility: hidden; width: 120px; background-color: #555; color: #fff; text-align: center; border-radius: 6px; padding: 5px 0; position: absolute; z-index: 1; bottom: 125%; left: 50%; margin-left: -60px; opacity: 0; transition: opacity 0.3s;}*/
+.tooltip .tooltiptext {visibility: hidden;width: 200px;background-color: #003471;color: #fff;text-align: center;border-radius: 6px;padding: 10px 10px;position: absolute; z-index: 1;bottom: 125%;left: 50%;margin-left: -60px; opacity: 0; transition: opacity 0.3s;}
+.tooltip .tooltiptext::after {content: "";  position: absolute;top: 100%;left: 50%;margin-left: -5px;  border-width: 5px; border-style: solid;border-color: #555 transparent transparent transparent;}
+.tooltip:hover .tooltiptext {visibility: visible; opacity: 1;}
+/*tooltip end*/
+.creditMsg{color:green;}

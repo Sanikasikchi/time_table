@@ -1,0 +1,72 @@
+{% load static %}
+{% comment %} <!-- jQuery 2.2.3 -->
+<script src="{% static 'backend/plugins/jQuery/jquery-2.2.3.min.js'%}"></script> {% endcomment %}
+<!-- jQuery UI 1.11.4 -->
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>$.widget.bridge('uibutton', $.ui.button);</script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{% static 'backend/bootstrap/js/bootstrap.min.js'%}"></script>
+<!-- Morris.js charts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<!--<script src="{% static 'backend/plugins/morris/morris.min.js"></script>-->
+<!-- Sparkline -->
+<script src="{% static 'backend/plugins/sparkline/jquery.sparkline.min.js'%}"></script>
+<!-- jvectormap -->
+<script src="{% static 'backend/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'%}"></script>
+<script src="{% static 'backend/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'%}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{% static 'backend/plugins/knob/jquery.knob.js'%}"></script>
+<!-- daterangepicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<script src="{% static 'backend/plugins/daterangepicker/daterangepicker.js'%}"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{% static 'backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'%}"></script>
+<!-- Slimscroll -->
+<script src="{% static 'backend/plugins/slimScroll/jquery.slimscroll.min.js'%}"></script>
+<!-- FastClick -->
+<script src="{% static 'backend/plugins/fastclick/fastclick.js'%}"></script>
+<script src="{% static 'backend/plugins/jquery-steps/jquery.steps.js'%}"></script>
+<script src="{% static 'backend/plugins/jquery-validation/jquery.validate.js'%}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'backend/dist/js/app.min.js'%}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<!--<script src="{% static 'backend/dist/js/pages/dashboard.js"></script>-->
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'backend/dist/js/demo.js'%}"></script>
+<script>
+     function resetTable() {
+         table.state.clear();
+     }
+</script>
+{% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script>
+     new Chart("myChart", {
+         type: "line",
+         data: {
+             labels: JSON.parse('["Jul 01","Jul 02","Jul 03","Jul 04","Jul 05","Jul 06","Jul 07","Jul 08","Jul 09","Jul 10","Jul 11","Jul 12","Jul 13","Jul 14","Jul 15","Jul 16","Jul 17","Jul 18","Jul 19","Jul 20","Jul 21","Jul 22","Jul 23","Jul 24","Jul 25","Jul 26","Jul 27","Jul 28","Jul 29","Jul 30","Jul 31"]'),
+             // labels: [100,200,300,400,500,600,700,800,900,1000],
+             datasets: [{
+                 // data: [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
+                 data: JSON.parse('[0,0,0,0,0,1,1,1,0,0,1,0,5,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0]'),
+                 borderColor: "red",
+                 fill: false
+             }]
+         },
+         options: {
+             legend: {
+                 display: false
+             },
+             scales: {
+                 xAxes: [{
+                     type: 'time',
+                     time: {
+                         displayFormats: {
+                             quarter: 'MMM YYYY'
+                         }
+                     }
+                 }]
+             }
+         }
+     });
+</script> {% endcomment %}

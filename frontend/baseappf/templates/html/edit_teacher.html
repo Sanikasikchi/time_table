@@ -1,0 +1,79 @@
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registration</title>
+        <link rel="stylesheet" href="trial.css">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <div class="logo_Wrp">
+                    <a href="javascript:void(0);"><img src="logo.png" alt="logo"></a>
+                </div>
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);">
+                        <span class="nav-item">A-DashBoard</span>
+                    </a></li>
+                    <li><a href="">
+                        <i class="fas fa-home"></i>
+                        <span class="nav-item">Home</span>
+                    </a></li>
+                    <li><a href="">
+                        <i class="fas fa-user">
+                            <span class="nav-item">Admin Profile</span>
+                        </i>
+                    </a></li>
+                    <li><a href="">
+                        <i class="faas fa-tasks"></i>
+                        <span class="nav-item">Notification</span>
+                    </a></li>
+                    <li><a href="">
+                        <i class="fas fa-cog"></i>
+                        <span class="nav-item">Settings</span>
+                    </a></li>
+                    <li><a href="">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="nav-item">Logout</span>
+                    </a></li>
+                </ul>
+            </nav>
+            <section class="main">
+                <div class="main-top">
+                    <h1>Edit Teacher</h1>
+                    <i class="fas fa-user-cog"></i>
+                </div>
+                <div class="main-skills">
+                    <div class="card">
+                        <form class="class_entry" action="">
+                            <!--<i class="fas fa-laptop-code"></i>--><!----Sanjana----->
+                            <h3>Teacher:</h3>
+                            <label>Choose teacher whose entry has been made:</label>
+                            <select name="dep" id="dep">
+                                <option value="101">Sheetal Rajapurkar</option>
+                                <option value="102">Shantanu Kanade</option>
+                                <option value="103">Varsha Dimaagkharab</option>
+                                <option value="104">Kirti Deshpande</option>
+                                <option value="105">Swati Ganjapoore</option>
+                                <option value="106">Akshata Badade</option>
+                            </select>
+                            <br>
+                                        <i class="fas.fa-laptop-code"></i>
+                                        <h3>PRN:</h3>
+                                        <p>Enter teahcer's PRN:</p>
+                                        <input type="text" placeholder="Enter PRN" required>
+                                <br><br>
+                                        <h3>Email:</h3>
+                                        <p>Enter teacher's official email:</p>
+                                        <input type="text" placeholder="Enter email" required>
+                                        <br><button onclick="window.location.href = 'tconf.html';">Generate Email</button>                                          
+                                </div>   
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

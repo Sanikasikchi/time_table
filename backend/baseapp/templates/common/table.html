@@ -1,0 +1,298 @@
+{% extends 'includes/layout.html' %}
+{% comment %} {% load django_tables2 %} {% endcomment %}
+{% load render_table from django_tables2 %}
+{% load static %}
+{% block content %}
+    <form method="POST"
+          id="DjangoModule"
+          name="DjangoModule"
+          action="change-status"
+          enctype="multipart/form-data"
+          novalidate>
+        {% csrf_token %}
+        <input type="hidden" name="prev" value="{{ request.path }}">
+        <input type="hidden" name="operationFlag" value="">
+        <section class="content-header">
+            <h1>{{ ModuleName }}</h1>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#"><i class="fa fa-dashboard"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">{{ ModuleName }}</a>
+                </li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">{{ ModuleName }}</h3>
+                            {% if BackUrl %}
+                                <a href="{% url BackUrl %}{% if BackUrl_Q %}{{ BackUrl_Q }}{% endif %}">
+                                 {% comment %} margin-top:-25px; {% endcomment %}
+                                    <button type="button"
+                                            class="btn btn-primary"
+                                            style="float:right!important;
+                                                  ">Back</button>
+                                </a>
+                            {% endif %}
+                        </div>
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert {% if message.tags == "success" %} alert-success{% else %}alert-danger{% endif %}"
+                                     role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        <div class="box">
+                            <input type="hidden"
+                                   name="_token"
+                                   value="nGcLDCUct61pj2fNMopOr76w9y19wuzFQdS5Hw4b">
+                            <div class="box-header">
+                                <!-- <h3 class="box-title">All CMS Pages</h3> -->
+                                <div class="col-md-9 col-sm-9">
+                                    <p>
+                                        {% if Active_deactive %}
+                                            <button class="btn btn-success btn-sm"
+                                                    type="button"
+                                                    name="active"
+                                                    value="Activate"
+                                                    onClick="JavaScript:CallOperation(this.value,'DjangoModule','chk[]');">
+                                                Active
+                                            </button>
+                                            <button class="btn btn-success btn-sm"
+                                                    type="button"
+                                                    name="de-active"
+                                                    value="De-Activate"
+                                                    onClick="JavaScript:CallOperation(this.value,'DjangoModule','chk[]');">
+                                                Deactive
+                                            </button>
+                                        {% endif %}
+                                        {% if Is_Menu %}
+                                            <button class="btn btn-info btn-sm"
+                                                    type="button"
+                                                    name="setheader"
+                                                    value="Set As Header"
+                                                    onClick="JavaScript:CallOperation(this.value,'DjangoModule','chk[]');">
+                                                Set As Menu
+                                            </button>
+                                            <button class="btn btn-info btn-sm"
+                                                    type="button"
+                                                    name="unsetheader"
+                                                    value="Unset from Header"
+                                                    onClick="JavaScript:CallOperation(this.value,'DjangoModule','chk[]');">
+                                                Unset from Header
+                                            </button>
+                                        {% endif %}
+                                        {% if Is_Footer %}
+                                            <button class="btn btn-warning btn-sm"
+                                                    type="button"
+                                                    name="setfooter"
+                                                    value="Set As Fotter"
+                                                    onClick="JavaScript:CallOperation(this.value,'DjangoModule','chk[]');">
+                                                Set As Footer
+                                            </button>
+                                            <button class="btn btn-warning btn-sm"
+                                                    type="button"
+                                                    name="unsetfooter"
+                                                    value="Unset from Fotter"
+                                                    onClick="JavaScript:CallOperation(this.value,'DjangoModule','chk[]');">
+                                                Unset from Footer
+                                            </button>
+                                        {% endif %}
+                                        {% if ExportUrl %}
+                                            <button type="button"
+                                                    class="btn btn-primary"
+                                                    style="display: inline;"
+                                                    value="export"
+                                                    onClick="JavaScript:callExport(this.value,'DjangoModule','chk[]');">
+                                                Export
+                                            </button>
+                                        {% endif %}
+                                        {% if ImportUrl %}
+                                            {% csrf_token %}
+                                            <input type="file"
+                                                   style="display:none"
+                                                   name="imports"
+                                                   id="importFile"
+                                                   accept=".csv">
+                                            <button type="button"
+                                                    class="btn btn-primary"
+                                                    onclick="$('[name=imports]').click();"
+                                                    style="display: inline;">
+                                                Import
+                                            </button>
+                                        {% endif %}
+                                        {% if FeaturedButton %}
+                                            <button class="btn btn-info btn-sm"
+                                                    type="button"
+                                                    name="set-as-featured"
+                                                    value="Set as featured"
+                                                    onClick="JavaScript:CallOperation(this.value,'DjangoModule','chk[]');">
+                                                Set as featured
+                                            </button>
+                                            <button class="btn btn-info btn-sm"
+                                                    type="button"
+                                                    name="unset-from-featured"
+                                                    value="Unset from featured"
+                                                    onClick="JavaScript:CallOperation(this.value,'DjangoModule','chk[]');">
+                                                Un-set from featured
+                                            </button>
+                                        {% endif %}
+                                        {% if Delete %}
+                                            <button class="btn btn-danger btn-sm"
+                                                    type="button"
+                                                    name="delete"
+                                                    value="Delete"
+                                                    onClick="JavaScript:CallOperation(this.value,'DjangoModule','chk[]');">
+                                                Delete
+                                            </button>
+                                        {% endif %}
+                                        {% if sortable %}<button id="saveOrdering" class="btn btn-info btn-sm" type="button">Save ordering</button>{% endif %}
+                                    </p>
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    {% if AddUrl %}
+                                        <a href="{% url AddUrl %}{% if AddUrl_Q %}{{  AddUrl_Q }}{% endif %}">
+                                            <button type="button" class="btn btn-primary" style="float: right;">
+                                                <i class="fa fa-plus-circle"></i> Add
+                                        </button>
+                                    </a>
+                                {% endif %}
+                            </div>
+                            {% if not Search == None %}
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="input-group">
+                                        <input type="text"
+                                               name="search"
+                                               id="search_input"
+                                               class="form-control"
+                                               placeholder="Search..."
+                                               value="{{ Search }}">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-flat filter_search">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <a class="btn btn-sm btn-primary" href="{{ request.path }}"><i class="fa fa-refresh"></i> Reset Filter</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <div class="" id="testVar">
+                                {% comment %} {% render_table table %} {% endcomment %}
+                                {% render_table table "common/django-tables.html" %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <input type="file"
+           id="imgupload-0"
+           name="Import"
+           class="csvupload"
+           accept=".csv"
+           style="display:none">
+           <input type="hidden" name="post_sort_id"> 
+    <button type="submit" id="submit" style="display:none"></button>
+</form>
+{% endblock %}
+{% block scripts %}
+    <script>
+        setTimeout(function(){
+            if ($(".table-container > div").hasClass("custom_pagination")) {
+                $('#DataTables_Table_0_paginate, #DataTables_Table_0_info, #DataTables_Table_0_filter').hide()
+                $('#DataTables_Table_0_paginate').css('display','none')
+                $('.table-container > .pagination').css('float','right')
+            }
+        }, 500);
+    </script>
+    <script src="{% static 'assets/js/setCommon.js' %}"></script>
+    <script>
+        window.addEventListener('keydown', function(e) {
+            if (e.keyIdentifier == 'U+000A' || e.keyIdentifier == 'Enter' || e.keyCode == 13) {
+                if (e.target.nodeName == 'INPUT' && e.target.type == 'text') {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+        }, true);
+        $("#checkAll").change(function() {
+            $("input:checkbox").prop('checked', $(this).prop("checked"));
+        });
+
+        $(".Import").on("click", function() {
+            $('#imgupload').trigger('click');
+        });
+        $("#importFile").on("change", function() {
+            $('[name=operationFlag]').val('import')
+            $('#submit').click();
+            $("[name=DjangoModule]").submit();
+        });
+        $(".filter_search").click(function() {
+            if ($('[name=search]').val().length !== 0) {
+                location.href = '{{ request.path }}?search=' + $('[name=search]').val()
+            }
+        });
+        $(document).ready(function() {
+            $('.entity_id').each(function() {
+                $(this).parent().prev().prev().find('.text').val(this.attributes.dataid.value)
+            }).get();
+
+        });
+    </script>
+    {% if sortable %}
+        <script src="{% static 'admin/js/sortable.min.js' %}"></script>
+        <script>
+            let sortable = Sortable.create(groups, {
+                onChange: () => {
+                    saveOrderingButton.disabled = false;
+                }
+            });
+            var getUrlParameter = function getUrlParameter(sParam) {
+                var sPageURL = window.location.search.substring(1),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+            
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+            
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                    }
+                }
+                return false;
+            };
+            $("#saveOrdering").on('click', (e) => {
+                e.preventDefault();
+                const formInput = $('#orderingInput');
+    
+                const rows = document.getElementById("groups").querySelectorAll('tr');
+                let ids = []
+                let mydict = {}
+                let i = 1
+                if(getUrlParameter('page')!==false){
+                    i = 1+((getUrlParameter('page')-1)*10)
+                }
+                for (let row of rows) {
+                    mydict[i] = row.dataset.pid
+                    i++
+                }
+                $('[name=post_sort_id]').val(JSON.stringify(mydict))
+                $('[name=operationFlag]').val('Sorting')
+                $('#submit').click();
+                $("[name=DjangoModule]").submit();
+            });
+        </script>
+    {% endif %}
+{% endblock %}

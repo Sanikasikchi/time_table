@@ -1,0 +1,144 @@
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registration</title>
+        <link rel="stylesheet" href="trial.css">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <div class="logo_Wrp">
+                    <a href="javascript:void(0);"><img src="logo.png" alt="logo"></a>
+                </div>
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);">
+                        <span class="nav-item">A-DashBoard</span>
+                   
+                    </a></li>
+                    <li><a href="">
+                        <i class="fas fa-home"></i>
+                        <a href="admin.html">Home</a>
+                    </a></li>
+                    <li><a href="">
+                        <i class="fas fa-user">
+                            <a href="teacher_entry.html">Enter Teacher Credentials</a>
+                        </i>
+                    </a></li>
+                    <li><a href="">
+                        <i class="fas fa-user">
+                            <a href="class_entry.html">Enter Classes</a>
+                        </i>
+                    </a></li>
+                    <li><a href="">
+                        <i class="fas fa-user">
+                            <a href="edit_class.html">Edit Classes</a>
+                        </i>
+                    </a></li>
+                    <li><a href="">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a href="">Logout></a>
+                        
+                    </a></li>
+                </ul>
+            </nav>
+            <section class="main">
+                <div class="main-top">
+                    <h1>Register Class</h1>
+                    <i class="fas fa-user-cog"></i>
+                </div>
+                <div class="main-skills">
+                    <div class="card">
+                        <form class="class_entry" action="">
+                            <!--<i class="fas fa-laptop-code"></i>--><!----Sanjana----->
+                            <h3>Department:</h3>
+                            <label>Choose Department you teach:</label>
+                            <select name="dep" id="dep">
+                                <option value="BSC CS">BSC CS</option>
+                                <option value="BSC IT">BSC IT</option>
+                                <option value="BCA">BCA</option>
+                            </select>
+                    <br><br>
+                            <h3>Division:</h3>
+                            <p>Select division you teach:</p>
+                            <select name="div" id="div">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                            </select>
+                    <br><br>
+                            <h3>Teacher:</h3>
+                            <p>Select teachers for all subjects:</p>
+                            <div class="class_select">
+                                <input type="checkbox" id="101" value="101">
+                                <label for="101">Sheetal Rajapurkar</label>
+                            </div>
+                            <div class="class_select">
+                                <input type="checkbox" id="102" value="102">
+                                <label for="102"> Shantanu Kanade </label><br>
+                            </div>                            
+                            <div class="class_select">
+                                <input type="checkbox" id="103" value="103">
+                                <label for="103">Varsha Dimaagkharab</label><br>
+                            </div>
+                            <div class="class_select">
+                                <input type="checkbox" id="104" value="104">
+                                <label for="104">Kirti Deshpande</label><br>
+                            </div>
+                            <div class="class_select">
+                                <input type="checkbox" id="105" value="105">
+                                <label for="105">Swati Ganjapoore</label><br>
+                            </div>
+                            <div class="class_select">
+                                <input type="checkbox" id="106" value="106">
+                                <label for="106">Akshata Badade</label><br><br>
+                            </div>
+                            
+                            <h3>Timing:</h3>
+                            <p>Select class timings:</p>
+                            <div class="class_select">
+                                <input type="checkbox" id="8" value="8">
+                                <label for="8">8:00-9:00</label><br>
+                            </div>
+                            <div class="class_select">
+                                <input type="checkbox" id="9" value="9">
+                            <label for="9">9:00-10:00 </label><br>
+                            </div>
+                            <div class="class_select">
+                                <input type="checkbox" id="10" value="10">
+                            <label for="10">10:00-11:00</label><br>
+                            </div>
+                            <div class="class_select">
+                                <input type="checkbox" id="11" value="11">
+                            <label for="11">11:00-12:00</label><br>
+                            </div>
+                            <div class="class_select">
+                                <input type="checkbox" id="12" value="12">
+                            <label for="12">12:30-1:00</label><br>
+                            </div>
+                            <div class="class_select">
+                                <input type="checkbox" id="1" value="1">
+                            <label for="1">1:00-2:00</label><br>
+                            </div>
+                            <div class="class_select">
+                                <input type="checkbox" id="2" value="2">
+                            <label for="2">2:00-3:00</label><br>
+                            </div>
+                            <div class="class_select">
+                                <input type="checkbox" id="3" value="3">
+                            <label for="3">3:00-4:00</label><br>
+                            </div>
+                            <div class="class_select">
+                                <input type="checkbox" id="4" value="4">
+                            <label for="4">4:00-5:00</label><br><br>
+                            </div>
+                    <br>
+
+                            <br><button onclick="window.location.href = 'tconf.html';">Generate Email</button>
+                        </form>                                          
+                    </div>   
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

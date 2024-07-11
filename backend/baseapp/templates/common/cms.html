@@ -1,0 +1,33 @@
+{% extends 'includes/layout.html' %}
+{% load django_tables2 %}
+{% block content %}
+    <div class="container-fluid custom123">
+        <div class="body">
+            <ol class="breadcrumb breadcrumb-bg-pink">
+                <li class="active">{{ cmsData.page_title }}</li>
+            </ol>
+        </div>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}"
+                     role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        <div>
+            <form class="card form-horizontal" name="myForm" novalidate>
+                <div class="header">
+                    <h2>{{ cmsData.page_title }}</h2>
+                </div>
+                <div style="margin:15px;">
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{ cmsData.description |safe }}
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

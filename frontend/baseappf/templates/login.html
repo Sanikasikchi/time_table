@@ -1,0 +1,31 @@
+<!-- include header here -->
+{% include 'includesf/header.html' %}
+
+<!-- This tempalte tag loads the static file handling functionality in Django -->
+{% load static %}
+
+<body>
+  <div class="container">
+    <div class="tab-form">
+      <div class="tab-body">
+        <div class="login">
+          <form id="sign_in" method="POST" action="">
+            {% csrf_token %}
+            <h2>Login Here</h2>
+            <div class="form-input">
+              <label>Username</label>
+              <input type="text" name="username" placeholder="Enter Username" />
+            </div>
+            <div class="form-input">
+              <label>Password</label>
+              <input type="password" name="password" placeholder="Enter Password" />
+            </div>
+            <div class="form-input">
+              <button onclick="window.location.href = 'admin.html';">LogIn</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

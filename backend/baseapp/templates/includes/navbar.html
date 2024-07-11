@@ -1,0 +1,60 @@
+<style type="text/css">
+    .main-sidebar div{
+        height:100% !important
+    }
+</style>
+<aside class="main-sidebar">
+    <section class="sidebar" style="height: 100% !important;">
+        <ul class="sidebar-menu">
+            <li class="treeview {% if request.get_full_path == "/administrator/" %}active{% endif %}">
+                <a href="{% url "administrator" %}">
+                    <i class="fa fa-circle-o"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="treeview {% if request.get_full_path == "/administrator/sitesetting" %}active{% endif %}">
+                <a href="{% url "sitesetting" %}">
+                    <i class="fa fa-circle-o"></i>
+                    <span>Site Settings</span>
+                </a>
+            </li>
+ 
+            {% comment %} <li class="treeview {% if request.get_full_path == "/administrator/cmspage/list" %}active{% endif %}">
+                <a href="{% url "cmspage" %}">
+                    <i class="fa fa-circle-o"></i>
+                    <span>CMS Pages</span>
+                </a>
+            </li> {% endcomment %}
+            <li class="treeview {% if request.get_full_path == "/administrator/subject/list" %}active{% endif %}">
+                <a href="{% url "subject" %}">
+                    <i class="fa fa-circle-o"></i>
+                    <span>Subject</span>
+                </a>
+            </li>
+            <li class="treeview {% if request.get_full_path == "/administrator/classes/list" %}active{% endif %}">
+                <a href="{% url "classes" %}">
+                    <i class="fa fa-circle-o"></i>
+                    <span>Classes</span>
+                </a>
+            </li>
+          <li class="treeview {% if request.get_full_path == "/administrator/teacher/list" %}active{% endif %}">
+                <a href="{% url "teacher" %}">
+                    <i class="fa fa-circle-o"></i>
+                    <span>Teachers</span>
+                </a>
+            </li> 
+            <li class="treeview {% if request.get_full_path == "/administrator/timetable/list" %}active{% endif %}">
+                <a href="{% url "timetable" %}">
+                    <i class="fa fa-circle-o"></i>
+                    <span>Timetable</span>
+                </a>
+            </li>
+            <li class="treeview">
+                <a href="{% url 'adminlogout' %}">
+                    <i class="fa fa-sign-out"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+</aside>

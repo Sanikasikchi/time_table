@@ -1,0 +1,23 @@
+{% load helper %}
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% seo request.path  as meta %}
+        <meta name="title" content="{{ meta.title }}">
+        <meta name="keywords" content="{{ meta.keywords }}">
+        <meta name="description" content="{{ meta.description }}">
+        <title>{{ meta.page_title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% include "includesf/styles.html" %}
+    </head>
+    <body>
+        {% include "includesf/header.html" %}
+        {% block content %}
+        {% endblock content %}
+        {% include "includesf/footer.html" %}
+        {% include "includesf/scripts.html" %}
+        {% block scripts %}
+        {% endblock scripts %}
+    </body>
+</html>

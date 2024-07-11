@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registration</title>
+        <link rel="stylesheet" href="trial.css">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    </head>
+    <body>
+    <div class="tab-form">
+        <div class="tab-header">
+            <div class="active">Login</div>
+            <div>SignUp</div>
+        </div>
+        <div class="tab-body">
+            <div class="login active">
+                <h2>Login Here</h2>
+                <div class="form-input">
+                    <label>Username</label>
+                    <input type="text" placeholder="Enter Username">
+                </div>
+                <div class="form-input">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter Password">
+                </div>
+                <div class="form-input">
+                    <button onclick="window.location.href = 'admin.html';">LogIn</button>
+                </div>
+            </div>
+            <div class="signup">
+                <h2>Create an Account</h2>
+                <div class="form-input">
+                    <label>Username</label>
+                    <input type="text" placeholder="Enter Username">
+                </div>
+                <div class="form-input">
+                    <label>Email</label>
+                    <input type="text" placeholder="Enter Email">
+            </div>
+            <div class="form-input">
+                <label>Password</label>
+                <input type="password" placeholder="Enter Password">
+            </div>
+            <div class="form-input">
+                <button>SignUp</button>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        let tab = document.querySelector(".tab-form");
+        let tabHeader = tab.querySelector(".tab-header");
+        let tabHeaderElements = tab.querySelectorAll(".tab-header > div");
+        let tabBody = tab.querySelector(".tab-body");
+        let tabBodyElements = tab.querySelectorAll(".tab-body > div");
+        for(let i=0; i<tabHeaderElements.length;i++){
+            tabHeaderElements[i].addEventListener("click",function(){
+                tabHeader.querySelector(".active").classList.remove("active");
+                tabHeaderElements[i].classList.add("active");
+                tabBody.querySelector(".active").classList.remove("active");
+                tabBodyElements[i].classList.add("active");
+            });
+        }
+    </script>
+</body>

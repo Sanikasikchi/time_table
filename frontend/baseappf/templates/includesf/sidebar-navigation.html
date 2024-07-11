@@ -1,0 +1,34 @@
+<!-- This tempalte tag loads the static file handling functionality in Django -->
+{% load static %}
+<nav>
+    <div class="logo_Wrp">
+        <a href="javascript:void(0);"><img src="{% static 'frontend/assets/img/logo.png' %}" alt="Logo"></a>
+    </div>
+    <ul>
+        <!-- <li>
+            <a href="/">
+                <span class="nav-item">DashBoard</span>
+            </a>
+        </li> -->
+        <li>
+            <a href="/teacher-entry">
+                <span class="nav-item">Manage Profile</span>
+            </a>
+        </li>
+        <li>
+            <a href="/manage-classes">
+                <span class="nav-item">Upcoming Classes</span>
+            </a>
+        </li>
+        <li>
+            <a href="/classes-history">
+                <span class="nav-item">Classes History</span>
+            </a>
+        </li>
+        <li>
+            <a href="/logout">
+                <span class="nav-item">Logout</span>
+            </a>
+        </li>
+    </ul>
+</nav>

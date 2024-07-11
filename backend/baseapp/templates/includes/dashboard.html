@@ -1,0 +1,410 @@
+{% extends 'includes/layout.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Dashboard
+        <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-aqua"><i class="fa fa-dollar"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Total Subjects</span>
+                    <span class="info-box-number">{{subjects}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-red"><i class="fa fa-money"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Total Classes</span>
+                    <span class="info-box-number">{{classes}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix visible-sm-block"></div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Total Sections</span>
+                    <span class="info-box-number">2</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+                <div class="info-box-content">
+                   <span class="info-box-text">Total Teachers</span>
+                    <span class="info-box-number">{{teachers}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% comment %} <div class="row">
+        <div class="col-md-7">
+            <div class="box">
+                <div class="box-body">
+                    <p class="text-center">
+                        <strong>Orders</strong>
+                    </p>
+
+                    <div class="chart">
+                        <div class="chartjs-size-monitor">
+                            <div class="chartjs-size-monitor-expand">
+                                <div class=""></div>
+                            </div>
+                            <div class="chartjs-size-monitor-shrink">
+                                <div class=""></div>
+                            </div>
+                        </div>
+                        <!-- Sales Chart Canvas -->
+                        <canvas id="myChart" style="width: 553px; max-width: 700px; display: block; height: 276px;"
+                            width="553" height="276" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!-- /.chart-responsive -->
+        </div>
+        <div class="col-md-5">
+            <div class="box">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active"> <a data-toggle="tab" href="#Top-Search" aria-expanded="true">Top
+                                Search</a>
+                        </li>
+                        <li><a data-toggle="tab" href="#Last-Search-Terms" aria-expanded="false">Last Search
+                                Terms</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-body">
+                    <div class="tab-content">
+                        <div id="Top-Search" class="tab-pane active">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Search Key</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Test Search</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Test Search2</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>tes</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>test</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td></td>
+                                            <td>0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="Last-Search-Terms" class="tab-pane">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Search Key</th>
+                                            <th>Customer</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>tes</td>
+                                            <td>
+                                                <a>Aarti
+                                                    Invitra </a>
+                                            </td>
+                                            <td>18 Jul 2022</td>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active"> <a data-toggle="tab" href="#Recently-added" aria-expanded="true">Recently
+                                added</a></li>
+                        <li><a data-toggle="tab" href="#Best-Selling" aria-expanded="false">Best Selling</a>
+                        </li>
+                        <li><a data-toggle="tab" href="#Most-Viewed" aria-expanded="false">Most Viewed</a>
+                        </li>
+                        <li><a data-toggle="tab" href="#Wish-list" aria-expanded="false">Wish list</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-body">
+                    <div class="tab-content">
+                        <div id="Recently-added" class="tab-pane active">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Product Code</th>
+                                            <th>Product Name</th>
+                                            <th>Added On</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>TestProd1</td>
+                                            <td><a>Test
+                                                    Product Aarti</a>
+                                            </td>
+                                            <td>07 Mar 2022</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="Best-Selling" class="tab-pane">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Product Code</th>
+                                            <th>Product Name</th>
+                                            <th>Quantity</th>
+                                            <th>Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>TK-00005
+                                            </td>
+                                            <td><a>FTAM
+                                                    Acrylic Handshake 4</a>
+                                            </td>
+                                            <td>2811</td>
+                                            <td><small>₹</small>2,248,650.00
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="Most-Viewed" class="tab-pane">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Product Code</th>
+                                            <th>Product Name</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>TK-00001
+                                            </td>
+                                            <td><a>FTAM
+                                                    Acrylic Handshake 7</a>
+                                            </td>
+                                            <td>305</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="Wish-list" class="tab-pane">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Product Code</th>
+                                            <th>Product Name</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>TK-00005
+                                            </td>
+                                            <td><a>FTAM
+                                                    Acrylic Handshake 4</a>
+                                            </td>
+                                            <td>1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="box-footer clearfix">
+                    <a class="btn btn-sm btn-info btn-flat pull-left">Add New Products</a>
+                    <a class="btn btn-sm btn-default btn-flat pull-right">View All
+                        Products</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active"> <a data-toggle="tab" href="#Last-Ordered" aria-expanded="true">Last
+                                Ordered</a></li>
+                        <li><a data-toggle="tab" href="#Recently-Joined" aria-expanded="false">Recently
+                                Joined</a>
+                        </li>
+                        <li><a data-toggle="tab" href="#Top-Customers" aria-expanded="false">Top
+                                Customers</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-body">
+                    <div class="tab-content">
+                        <div id="Last-Ordered" class="tab-pane active">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Order Id</th>
+                                            <th>Customer</th>
+                                            <th>Status</th>
+                                            <th>Added On</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td><a>3391322458</a>
+                                            </td>
+                                            <td><a>Abhishek
+                                                    Invitra</a>
+                                            </td>
+                                            <td pending="">
+                                                <span class="label label-warning">Pending</span>
+                                            </td>
+                                            <td>19 Jul 2022</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="Recently-Joined" class="tab-pane">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Customer</th>
+                                            <th>Orders</th>
+                                            <th>Amount</th>
+                                            <th>Added On</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td><a>Rahul
+                                                    Patil</a>
+                                            </td>
+                                            <td>6</td>
+                                            <td><small>₹</small>480,000.00</td>
+                                            <td>16 Dec 2021</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="Top-Customers" class="tab-pane">
+                            <div class="table-responsive">
+                                <table class="table no-margin">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Customer</th>
+                                            <th>Orders</th>
+                                            <th>Amount</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td><a>Abhishek
+                                                    Invitra1</a>
+                                            </td>
+                                            <td>83</td>
+                                            <td><small>₹</small>1,669,082.18</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="box-footer clearfix">
+                    <a class="btn btn-sm btn-info btn-flat pull-left">Add New Customer</a>
+                    <a class="btn btn-sm btn-default btn-flat pull-right">View All
+                        Customers</a>
+                </div>
+            </div>
+        </div>
+    </div> {% endcomment %}
+</section>
+<!-- /.content -->
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'includesf/layout.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+    <div class="innerpagecontainer bg-white">
+        <div class="aboutus-page">
+            <div class="container-fluid">
+                <div class="form-inputs aboutussearch">
+                    <img src="{% static 'frontend/images/search.svg' %}" alt="search">
+                    <input class="form-control" type="text" placeholder="Search...">
+                </div>
+                <br clear="all">
+                <h1>{{ cmsData.page_title }}</h1>
+                {{ cmsData.short_description|safe }}
+                {{ cmsData.description|safe }}
+            </div>
+        </div>
+    </div>
+</div>
+{% comment %} {% for value in data %}{% endfor %} {% endcomment %}
+{% endblock %}

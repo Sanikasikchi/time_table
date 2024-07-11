@@ -1,0 +1,40 @@
+/*admin custom css*/
+.label-mandatory{color: red;}
+.selection .select2-selection .select2-selection__rendered .select2-search .select2-search__field{border: 0px;}
+.rightFloatClass{float: right;}
+.noteColor{color: green;}
+.hidden{display:none;}
+.bookingSpan{ text-align: center;width: 30%;display: block;}
+.spanRed{background-color: red; color: white!important;}
+.spanGreen{background-color: green; color: white !important;}
+.spanOrange{background-color: orange; color: white!important;}
+.spanWhite{background-color: white; color: black!important;border: 1px solid #dddddd;}
+/*------Aarti changes(26-1018)*/
+.content-header>h1{display:inline-block; margin-right:1%;width:35%;}
+.content-header>.breadcrumb{position:inherit;top:inherit;right:inherit;width:63%;font-size:13px;text-align: right;}
+.content-header>.breadcrumb>li>a:hover{color:#3c8dbc;}
+.leftAlign{text-align: left!important;}
+.stars.rate {
+    background: url(../images/sprite-stars.png) no-repeat 0 -110px;
+    height: 20px;
+}
+.stars.rate2, .starsRate .ratings label.twoStr {
+    background: url(../images/sprite-stars.png) no-repeat 0 -66px;
+    height: 20px;
+}
+.stars.rate1, .starsRate .ratings label.oneStr {
+    background: url(../images/sprite-stars.png) no-repeat 0 -89px;
+    height: 20px;
+}
+.stars.rate3, .starsRate .ratings label.threeStr {
+    background: url(../images/sprite-stars.png) no-repeat 0 -43px;
+    height: 20px;
+}
+.stars.rate4, .starsRate .ratings label.fourStr {
+    background: url(../images/sprite-stars.png) no-repeat 0 -19px;
+    height: 20px;
+}
+.stars.rat5, .starsRate .ratings label.fourStr {
+    background: url(../images/sprite-stars.png) no-repeat 0 -19px;
+    height: 20px;
+}
